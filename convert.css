@@ -1,0 +1,103 @@
+ .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #202C39;
+            color: #fff;
+            text-align: center;
+        }
+
+        label {
+            display: block;
+            font-size: 18px;
+            font-weight: bold;
+            margin-bottom: 8px;
+        }
+
+        input[type="file"] {
+            border: none;
+            border-radius: 4px;
+            background-color: #364F6B;
+            color: #fff;
+            cursor: pointer;
+            font-size: 16px;
+            margin: 8px 0;
+            padding: 10px;
+        }
+
+        input[type="file"]:hover {
+            background-color: #485D6B;
+        }
+
+        input[type="file"]:focus {
+            outline: none;
+            box-shadow: 0 0 0 2px #5E6BAF;
+        }
+
+        #selectedImage {
+            display: block;
+            margin: 0 auto;
+            max-width: 80%;
+            height: auto;
+            margin-top: 16px;
+            border: 2px solid #fff;
+            box-shadow: 0px 0px 5px 0px rgba(255, 255, 255, 0.75);
+            border-radius: 4px;
+        }
+
+        #back {
+            background-color: #5E6BAF;
+            border: none;
+            border-radius: 4px;
+            color: #fff;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: bold;
+            margin-top: 16px;
+            padding: 12px 20px;
+            transition: background-color 0.3s;
+            padding: 20px 200px 20px 200px;
+        }
+
+        button:hover {
+            background-color: #7587D1;
+        }
+
+        button {
+            background-color: #5E6BAF;
+            border: none;
+            color: white;
+            padding: 20px 200px 20px 200px;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 20px;
+            margin-top: 50px;
+            cursor: pointer;
+            margin-top: 16px;
+            border-radius: 4px;
+        }
+
+        button:active {
+            background-color: #364F6B;
+        }
+
+        #convertedText {
+            background-color: #364F6B;
+            border: none;
+            border-radius: 4px;
+            color: #fff;
+            font-size: 25px;
+            margin-top: 16px;
+            padding: 20px 200px 20px 200px;
+            resize: none;
+        }
+
+        #convertedText:focus {
+            outline: none;
+            box-shadow: 0 0 0 2px #5E6BAF;
+        }

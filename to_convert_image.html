@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Image to Text Converter</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="convert.css">
+</head>
+
+<body>
+    <label for="myFile">Select an image to convert:</label>
+    <input type="file" id="myFile" accept="image/*">
+
+    <img src="#" id="selectedImage" alt="Selected Image" />
+    <br></br>
+    <button id="convertBtn">Convert</button>
+    <br></br>
+    <label for="convertedText">Converted text:</label>
+    <textarea cols="30" rows="10" id="convertedText"></textarea>
+
+    <script src="https://cdn.rawgit.com/naptha/tesseract.js/1.0.10/dist/tesseract.js"></script>
+
+    <script>
+        var myFile = document.getElementById("myFile");
+        var convertBtn = document.getElementById("convertBtn");
+        var selectedImage = document.getElementById("selectedImage");
+        var convertedText = document.getElementById("convertedText");
+
+        myFile.addEventListener("change", function () {
+            selectedImage.style.display = "block";
+            selectedImage.src = URL.createObjectURL(this.files[0]);
+        });
+
+        convertBtn.addEventListener("click", function () {
+            if (!myFile.files[0]) {
+                alert("Please select an image to convert.");
+                return;
+            }
+
+            Tesseract.recognize(myFile.files[0])
+                .then(function (result) {
+                    console.log("Conversion complete!");
+                    convertedText.value = result.text;
+                })
+                .catch(function (error) {
+                    console.error(error);
+                });
+        });
+    </script>
+    <br></br>
+    <button id="back" onclick="location.href='index.html'">Back</button>
+</body>
+
+</html>
